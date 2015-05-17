@@ -53,7 +53,7 @@ function getImage(dateStart, dateEnd, subject, offset)
 				{	
 					var post_created_time = moment(image[key].post_created_time).format("DD MMMM YYYY (HH:mm)");
 
-					var html = '<div class="col-md-2 col-sm-2 col-xs-2 thumbnail" title="'+moment(image[key].post_created_time).format("hh:mm")+'">' +
+					var html = '<div class="col-md-2 col-sm-2 col-xs-2 thumbnail" title="'+moment(image[key].post_created_time).format("HH:mm")+'">' +
 								'<div class="text-center"><span>'+image[key].author_displayname+'</span></div>'+
 										'<a href="'+image[key].post_link+'" target="_blank">' +
 											'<img src="'+image[key].post_url_image+'">' +
