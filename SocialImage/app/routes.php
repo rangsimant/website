@@ -11,7 +11,6 @@
 |
 */
 
-Route::get('/', function()
-{
-	return View::make('hello');
-});
+Route::resource('/','HomeController');
+
+Route::get('{dateStart}/{dateEnd}/{subject}/{offset}/getImage','HomeController@getImage');
