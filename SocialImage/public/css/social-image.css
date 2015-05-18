@@ -80,8 +80,3 @@ div.thumbnail
 	background-size: 50px;
 	background-position: center;
 }
-.wrapper-loading
-{
-	background: black;
-	opacity: 0.3;
-}
