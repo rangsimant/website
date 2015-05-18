@@ -52,9 +52,12 @@ function getImage(dateStart, dateEnd, subject, offset)
 				$.each(image, function(key)
 				{	
 					var post_created_time = moment(image[key].post_created_time).format("DD MMMM YYYY (HH:mm)");
+					var title = image[key].author_displayname;
+					if (title.length > 20) 
+						title = jQuery.trim(title).substring(0, 20).split(" ").slice(0, 20).join(" ") + "...";
 
 					var html = '<div class="col-md-2 col-sm-2 col-xs-2 thumbnail" title="'+moment(image[key].post_created_time).format("HH:mm")+'">' +
-								'<div class="text-center"><span>'+image[key].author_displayname+'</span></div>'+
+								'<div class="text-center"><span>'+title+'</span></div>'+
 										'<a href="'+image[key].post_link+'" target="_blank">' +
 											'<img src="'+image[key].post_url_image+'">' +
 										 '</a>' +
@@ -65,12 +68,13 @@ function getImage(dateStart, dateEnd, subject, offset)
 											 '</a>'+
 										 '</span>'+
 									'</div>';
+					$('div.nodata').hide();
 					$('div.content').append(html);
 				})
 			}
 			else
 			{
-				$('div.content').append('No Data!');
+				$('div.nodata').show();
 			}
 			$('div.loading').hide();
 		}

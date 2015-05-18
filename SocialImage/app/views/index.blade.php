@@ -16,6 +16,7 @@
 
 <body cz-shortcut-listen="true">
 <div class="loading"></div>
+<div class="nodata"><span>NO DATA !</span></div>
 
 <div class="container">
   <!-- Static navbar -->
