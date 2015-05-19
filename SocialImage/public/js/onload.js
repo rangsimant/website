@@ -50,7 +50,7 @@ function getImage(dateStart, dateEnd, subject, offset)
 		success: function(image)
 		{
 			post = image;
-			if (post.length != null) 
+			if (post.length > 0) 
 			{
 				$.each(post, function(key)
 				{	
@@ -75,10 +75,10 @@ function getImage(dateStart, dateEnd, subject, offset)
 					$('.content').append(html);
 				})
 			}
-			else
-			{
+			else if ($('.content > div').length <= 0)
 				$('div.nodata').show();
-			}
+			
+			console.log($('.content > div').length);
 			$('div.loading, div.loading-bg').hide();
 		}
 	});

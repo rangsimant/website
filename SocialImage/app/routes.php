@@ -11,6 +11,6 @@
 |
 */
 
-Route::resource('/','HomeController');
+Route::get('/','HomeController@all');
 
-Route::post('getImage','HomeController@getImage');
+Route::post('getImage','HomeController@getAll');

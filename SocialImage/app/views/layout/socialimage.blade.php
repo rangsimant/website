@@ -38,8 +38,8 @@
       </div>
       <div id="navbar" class="navbar-collapse collapse">
         <ul class="nav navbar-nav">
-          <li class="active"><a href="#">All Social</a></li>
-          <li><a href="#">Facebook</a></li>
+          <li class="active"><a href="{{ URL::to('/') }}">All Social</a></li>
+          <li><a href="{{ URL::to('facebook') }}">Facebook</a></li>
           <li><a href="#">Instragam</a></li>
         </ul>
         <ul class="nav navbar-nav navbar-right">
