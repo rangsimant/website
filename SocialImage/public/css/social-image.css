@@ -12,7 +12,10 @@ body
 .content
 {
 	margin-top: 30px;
+	margin-bottom: 30px;
 	padding: 15px;
+	height: auto;
+	position: absolute;
 }
 
 .daterange
