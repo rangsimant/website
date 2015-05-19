@@ -53,7 +53,8 @@ $(function() {
         }
     }, function(start, end, label) {
         // console.log(start.toISOString(), end.toISOString(), label);
-        $('div.content').html('');
+        $('.content').html('');
+
         dateStart = start.format('YYYY-MM-DD');
         dateEnd = end.format('YYYY-MM-DD');
         subject = $.trim($('a.dropdown-toggle').text());
@@ -62,6 +63,7 @@ $(function() {
         sessionStorage.setItem('dateEnd',dateEnd);
 
         getImage(dateStart, dateEnd, subject, 0);
+        i=1;
         label = labelDatepicker(start, end, label);
 
         sessionStorage.setItem('label',label);

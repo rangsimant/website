@@ -40,43 +40,46 @@ $(function()
 
 function getImage(dateStart, dateEnd, subject, offset)
 {
-	$('div.loading').show();
+	var baseURL = $('#baseURL').val();
+	$('div.loading, div.loading-bg').show();
 	$.ajax({
-		url: dateStart+"/"+dateEnd+"/"+subject+"/"+offset+"/getImage",
-		type: "GET",
+		url: baseURL+"/getImage",
+		type: "POST",
+		data: {dateStart:dateStart, dateEnd:dateEnd, subject:subject, offset:offset},
 		dataType: "json",
 		success: function(image)
 		{
-			if (image.length > 0) 
+			post = image;
+			if (post.length != null) 
 			{
-				$.each(image, function(key)
+				$.each(post, function(key)
 				{	
-					var post_created_time = moment(image[key].post_created_time).format("DD MMMM YYYY (HH:mm)");
-					var title = image[key].author_displayname;
+					var post_created_time = moment(post[key].post_created_time).format("DD MMMM YYYY (HH:mm)");
+					var title = post[key].author_displayname;
 					if (title.length > 20) 
 						title = jQuery.trim(title).substring(0, 20).split(" ").slice(0, 20).join(" ") + "...";
 
-					var html = '<div class="col-md-2 col-sm-2 col-xs-2 thumbnail" title="'+moment(image[key].post_created_time).format("HH:mm")+'">' +
+					var html = '<div class="col-md-2 col-sm-2 col-xs-2 thumbnail" title="'+moment(post[key].post_created_time).format("HH:mm")+'">' +
 								'<div class="text-center"><span>'+title+'</span></div>'+
-										'<a href="'+image[key].post_link+'" target="_blank">' +
-											'<img src="'+image[key].post_url_image+'">' +
+										'<a href="'+post[key].post_link+'" target="_blank">' +
+											'<img src="'+post[key].post_url_image+'">' +
 										 '</a>' +
 										 '<span class="">'+
 										 	''+post_created_time+''+
-											 '<a href="'+image[key].post_url_image+'" class="download text-right" target="_blank" download="'+image[key].author_displayname+'.jpeg">' +
+											 '<a href="'+post[key].post_url_image+'" class="download text-right" target="_blank" download="'+post[key].author_displayname+'.jpeg">' +
 												 '<i class="fa fa-cloud-download" title="Download"></i>' +
 											 '</a>'+
 										 '</span>'+
 									'</div>';
 					$('div.nodata').hide();
-					$('div.content').append(html);
+					$('.content').append(html);
 				})
 			}
 			else
 			{
 				$('div.nodata').show();
 			}
-			$('div.loading').hide();
+			$('div.loading, div.loading-bg').hide();
 		}
 	});
 }

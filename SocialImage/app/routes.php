@@ -13,4 +13,4 @@
 
 Route::resource('/','HomeController');
 
-Route::get('{dateStart}/{dateEnd}/{subject}/{offset}/getImage','HomeController@getImage');
+Route::post('getImage','HomeController@getImage');
