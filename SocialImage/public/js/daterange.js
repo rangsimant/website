@@ -16,7 +16,7 @@ $(function() {
     }
  
     $('#reportrange').daterangepicker({
-        format: 'MM DD YYYY',
+        format: 'MM/DD/YYYY',
         startDate: dateStart,
         endDate: dateEnd,
         minDate: '01/01/2012',

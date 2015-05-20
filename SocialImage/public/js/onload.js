@@ -45,7 +45,7 @@ function getImage(dateStart, dateEnd, subject, offset)
 	$.ajax({
 		url: baseURL+"/getImage",
 		type: "POST",
-		data: {dateStart:dateStart, dateEnd:dateEnd, subject:subject, offset:offset},
+		data: {dateStart:dateStart, dateEnd:dateEnd, subject:subject, offset:offset, channel:channel},
 		dataType: "json",
 		success: function(image)
 		{
@@ -59,8 +59,13 @@ function getImage(dateStart, dateEnd, subject, offset)
 					if (title.length > 20) 
 						title = jQuery.trim(title).substring(0, 20).split(" ").slice(0, 20).join(" ") + "...";
 
+					if (post[key].post_channel == 'facebook')
+						var channel = '<img src="'+baseURL+'/image/facebook.png" class="channel">';
+					else if(post[key].post_channel == 'instagram')
+						var channel = '<img src="'+baseURL+'/image/instagram.png" class="channel">';
+
 					var html = '<div class="col-md-2 col-sm-2 col-xs-2 thumbnail" title="'+moment(post[key].post_created_time).format("HH:mm")+'">' +
-								'<div class="text-center"><span>'+title+'</span></div>'+
+								'<div class="text-center">'+channel+' <span>'+title+'</span></div>'+
 										'<a href="'+post[key].post_link+'" target="_blank">' +
 											'<img src="'+post[key].post_url_image+'">' +
 										 '</a>' +

@@ -10,7 +10,10 @@
 | and give it the Closure to execute when that URI is requested.
 |
 */
+Route::controller('admin','AdminController');
 
 Route::get('/','HomeController@all');
+Route::get('facebook','HomeController@all');
+Route::get('instagram','HomeController@all');
 
 Route::post('getImage','HomeController@getAll');
