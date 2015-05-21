@@ -140,3 +140,11 @@ select.select-subject
 	border-radius: 4px !important;
 	font-weight: 700;
 }
+
+div.underline
+{
+	width: 100%;
+	padding: 15px;
+	border-bottom: 1px solid rgb(221, 221, 221);;
+	display: table;
+}

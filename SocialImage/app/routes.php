@@ -17,3 +17,4 @@ Route::get('facebook','HomeController@all');
 Route::get('instagram','HomeController@all');
 
 Route::post('getImage','HomeController@getAll');
+Route::post('getPageList','AccountController@getPageList');

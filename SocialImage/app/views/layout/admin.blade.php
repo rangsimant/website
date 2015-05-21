@@ -16,7 +16,7 @@
 </head>
 
 <body cz-shortcut-listen="true">
-
+<input type="hidden" value="{{ URL::to('/') }}" id="baseURL">
 
   <!-- Static navbar -->
   <nav class="navbar navbar-default navbar-static-top">
@@ -54,8 +54,8 @@
 <script src="{{ asset('bootstrap-daterangepicker/moment.timezone.js') }}"></script>
 <script src="{{ asset('bootstrap-daterangepicker/daterangepicker.js') }}"></script>
 
-<script src="{{ asset('js/init.js') }}"></script>
-<script src="{{ asset('js/admin/tabs.js') }}"></script>
+<script src="{{ asset('js/admin/init.js') }}"></script>
+<script src="{{ asset('js/admin/subject.js') }}"></script>
 <script src="{{ asset('js/admin/daterange.js') }}"></script>
 
 
