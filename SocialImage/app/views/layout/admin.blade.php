@@ -55,7 +55,8 @@
 <script src="{{ asset('bootstrap-daterangepicker/daterangepicker.js') }}"></script>
 
 <script src="{{ asset('js/init.js') }}"></script>
-<script src="{{ asset('js/admin-tabs.js') }}"></script>
+<script src="{{ asset('js/admin/tabs.js') }}"></script>
+<script src="{{ asset('js/admin/daterange.js') }}"></script>
 
 
 
