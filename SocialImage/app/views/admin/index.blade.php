@@ -2,7 +2,7 @@
 
 @section('content')
 	<div class="container">
-		<div class="col-md-4">
+		<div class="col-md-4 col-xs-12">
 			<h3>CHOOSE SUBJECT</h3>
 			<div class="form-inline">
 				<div class="form-group">
@@ -56,7 +56,7 @@
 							<p class="example">
 								Example : https://www.facebook.com/<span>118133614869896</span>?fref=ts | <span>ID = "118133614869896"</span>
 							</p>
-							<form class="form-inline">
+							<form class="form-inline" autocomplete="off">
 								<div class="form-group">
 									<label class="sr-only" for="exampleInputAmount">Amount (in dollars)</label>
 									<div class="input-group">
@@ -69,13 +69,31 @@
 									<label class="sr-only" for="datetime">Amount (in dollars)</label>
 									<div class="input-group">
 										<div class="input-group-addon"><i class="fa fa-calendar"></i></div>
-										<input type="text" class="form-control" id="datetime" placeholder="YYYY-MM-DD">
+										<input type="text" class="form-control" id="fb_datetime" name="fb_datetime" placeholder="YYYY-MM-DD">
 									</div>
 								</div>
 								<button type="submit" class="btn btn-primary">Add</button>
 							</form>
 						</div>
-						<div role="tabpanel" class="tab-pane" id="instagram">instagram</div>
+						<div role="tabpanel" class="tab-pane" id="instagram">
+							<form class="form-inline" autocomplete="off">
+								<div class="form-group">
+									<div class="input-group">
+										<div class="input-group-addon"><i class="fa fa-instagram"></i></div>
+										<input type="text" class="form-control" id="exampleInputAmount" placeholder="Username">
+									</div>
+								</div>
+
+								<div class="form-group">
+									<label class="sr-only" for="datetime"></label>
+									<div class="input-group">
+										<div class="input-group-addon"><i class="fa fa-calendar"></i></div>
+										<input type="text" class="form-control" id="ig_datetime" name="ig_datetime" placeholder="YYYY-MM-DD">
+									</div>
+								</div>
+								<button type="submit" class="btn btn-primary">Add</button>
+							</form>
+						</div>
 						<div role="tabpanel" class="tab-pane" id="twitter">coming soon ...</div>
 					</div>
 				</div>
