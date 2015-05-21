@@ -18,12 +18,17 @@ $('#subject').change(function()
 			total_page.text("Page total = "+ account.length);
 			$.each(account, function(key)
 			{
-				html = "<tr>"+
+				if (account[key].account_channel == 'facebook')
+					var channel_image = '<img src="'+baseURL+'/image/facebook.png" class="channel">';
+				else if(account[key].account_channel == 'instagram')
+					var channel_image = '<img src="'+baseURL+'/image/instagram.png" class="channel">';
+
+				var html = "<tr>"+
 							"<td>"+(key+1)+"</td>" +
 							"<td>"+account[key].account_id_user+"</td>" +
 							"<td>"+account[key].account_username+"</td>" +
-							"<td>"+account[key].account_channel+"</td>" +
-							"<td>"+account[key].account_available+"</td>" +
+							"<td class='text-center'>"+channel_image+" "+account[key].account_channel+"</td>" +
+							"<td class='text-center'>"+account[key].account_available+"</td>" +
 						"</tr>";
 
 				tbody.append(html);
