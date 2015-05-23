@@ -1,7 +1,8 @@
 $('.dropdown-menu>li>a').click(function()
 {
 	var subject = $(this).text();
-
+	ajax_getPost.abort();
+	
 	$('.content').html('');
 	$('a.dropdown-toggle').html(subject+" <span class='caret'></span>");
 	

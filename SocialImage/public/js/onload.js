@@ -42,7 +42,7 @@ function getImage(dateStart, dateEnd, subject, offset)
 {
 	var baseURL = $('#baseURL').val();
 	$('div.loading, div.loading-bg').show();
-	$.ajax({
+	ajax_getPost = $.ajax({
 		url: baseURL+"/getImage",
 		type: "POST",
 		data: {dateStart:dateStart, dateEnd:dateEnd, subject:subject, offset:offset, channel:channel},
