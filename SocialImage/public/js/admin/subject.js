@@ -1,7 +1,7 @@
 $('#subject').change(function()
 {
 	var subject = $(this).val();
-	var tbody = $('table > tbody');
+	var tbody = $('#page_list > tbody');
 	var title_page = $('#page_txt');
 	var total_page = $('#total_page');
 
@@ -16,19 +16,26 @@ $('#subject').change(function()
 		success: function( account )
 		{
 			total_page.text("Page total = "+ account.length);
+			var status;
+			var channel_image;
 			$.each(account, function(key)
 			{
-				if (account[key].account_channel == 'facebook')
-					var channel_image = '<img src="'+baseURL+'/image/facebook.png" class="channel">';
-				else if(account[key].account_channel == 'instagram')
-					var channel_image = '<img src="'+baseURL+'/image/instagram.png" class="channel">';
+				if (account[key].account_available == 'open')
+					status = 'status-open';
+				else
+					status = 'status-close';
 
-				var html = "<tr>"+
+				if (account[key].account_channel == 'facebook')
+					channel_image = '<img src="'+baseURL+'/image/facebook.png" class="channel">';
+				else if(account[key].account_channel == 'instagram')
+					channel_image = '<img src="'+baseURL+'/image/instagram.png" class="channel">';
+
+				var html = "<tr class='text-center'>"+
 							"<td>"+(key+1)+"</td>" +
-							"<td>"+account[key].account_id_user+"</td>" +
-							"<td>"+account[key].account_username+"</td>" +
-							"<td class='text-center'>"+channel_image+" "+account[key].account_channel+"</td>" +
-							"<td class='text-center'>"+account[key].account_available+"</td>" +
+							"<td class='text-left'>"+account[key].account_id_user+"</td>" +
+							"<td class='text-left'>"+account[key].account_username+"</td>" +
+							"<td class='text-center'>"+channel_image+"</td>" +
+							"<td class='text-center "+status+"'>"+account[key].account_available+"</td>" +
 						"</tr>";
 
 				tbody.append(html);
