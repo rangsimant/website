@@ -49,6 +49,7 @@
         <ul class="nav navbar-nav">
           <li class="{{ (Request::is('/'))?'active':''; }}">
             <a href="{{ URL::to('/') }}">
+              <img src="{{ asset('image/socialimage_logo.ico') }}" width="20px">
               <span>All Social</span>
             </a>
           </li>

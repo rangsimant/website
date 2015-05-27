@@ -54,7 +54,7 @@ $(function() {
             firstDay: 1
         }
     }, function(start, end, label) {
-        // console.log(start.toISOString(), end.toISOString(), label);
+        ajax_getPost.abort();
         $('.content').html('');
 
         dateStart = start.format('YYYY-MM-DD');
