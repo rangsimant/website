@@ -63,17 +63,6 @@ return array(
 			'prefix'    => '',
 		),
 
-		'mysql' => array(
-			'driver'    => 'mysql',
-			'host'      => 'tools.thothmedia.com',
-			'database'  => 'social_image_v2',
-			'username'  => 'tools',
-			'password'  => 'thtools+th',
-			'charset'   => 'utf8',
-			'collation' => 'utf8_unicode_ci',
-			'prefix'    => '',
-		),
-
 		'pgsql' => array(
 			'driver'   => 'pgsql',
 			'host'     => 'localhost',
