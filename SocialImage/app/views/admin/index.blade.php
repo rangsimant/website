@@ -3,25 +3,7 @@
 @section('content')
 	<div class="container">
 		<div class="row">
-			<div class="col-md-4 col-xs-12">
-				<h3>CHOOSE SUBJECT</h3>
-				<div class="form-inline">
-					<div class="form-group">
-						<label>SUBJECT :</label>
-						<div class="input-group">
-							<select class="form-control input-md select-subject" id="subject">
-								<option value="">--Please select subject--</option>
-							 	@foreach($subjects as $subject)
-					          		<option value="{{ $subject->subject_name }}">{{ ucfirst($subject->subject_name) }}</option>
-					        	@endforeach
-					        </select>
-						</div>
-				        <button class="btn btn-success btn-sm">New</button>
-					</div>
-				</div>
-			</div>
-
-			<div class="col-md-8">
+			<div class="col-md-6">
 				<h3>ADD NEW PAGE</h3>
 				<div role="tabpanel">
 
@@ -51,18 +33,33 @@
 				  <!-- Tab panes -->
 						<div class="tab-content">
 							<div role="tabpanel" class="tab-pane active" id="facebook">
-								<p class="example">
-									Example : https://www.facebook.com/<span>samsungthailand</span>?fref=ts | <span>Name = "samsungthailand"</span>
-								</p>
-								<p class="example">
-									Example : https://www.facebook.com/<span>118133614869896</span>?fref=ts | <span>ID = "118133614869896"</span>
-								</p>
-								<form class="form-inline" autocomplete="off">
+							<p class="example">
+								Example : https://www.facebook.com/<span>samsungthailand</span>?fref=ts | <span>Name = "samsungthailand"</span>
+							</p>
+							<p class="example">
+								Example : https://www.facebook.com/<span>118133614869896</span>?fref=ts | <span>ID = "118133614869896"</span>
+							</p>
+							<div class="">
+								<div class="form-group">
+									<label>SUBJECT :</label>
+									<div class="input-group">
+										<select class="form-control input-md select-subject" id="subject">
+											<option value="">--Please select subject--</option>
+										 	@foreach($subjects as $subject)
+								          		<option value="{{ $subject->subject_name }}">{{ ucfirst($subject->subject_name) }}</option>
+								        	@endforeach
+								        </select>
+									</div>
+								</div>
+							</div>
+							{{ Form::open(array('id' => 'facebook_page', 'url' => 'newAccount', 'autocomplete' => 'off')) }}
+							<div class="group">
+								<div class="form-inline">
 									<div class="form-group">
 										<label class="sr-only" for="exampleInputAmount">Amount (in dollars)</label>
 										<div class="input-group">
 											<div class="input-group-addon"><i class="fa fa-facebook"></i></div>
-											<input type="text" class="form-control" id="exampleInputAmount" placeholder="ID or Name">
+											<input type="text" class="form-control account" id="account" name="account[]" placeholder="ID or Name">
 										</div>
 									</div>
 
@@ -70,11 +67,16 @@
 										<label class="sr-only" for="datetime">Amount (in dollars)</label>
 										<div class="input-group">
 											<div class="input-group-addon"><i class="fa fa-calendar"></i></div>
-											<input type="text" class="form-control" id="fb_datetime" name="fb_datetime" placeholder="YYYY-MM-DD">
+											<input type="text" class="form-control since" id="since" name="since[]" placeholder="YYYY-MM-DD">
 										</div>
 									</div>
-									<button type="submit" class="btn btn-primary">Add</button>
-								</form>
+								</div>
+							</div>
+							<div style="margin-top:5px;">
+								<button id="addAccount" type="button" class="btn btn-success"><i class="fa fa-plus"></i></button>
+								<button type="submit" class="btn btn-primary">Save</button>
+							</div>
+							{{ Form::close() }}
 							</div>
 							<div role="tabpanel" class="tab-pane" id="instagram">
 								<form class="form-inline" autocomplete="off">
@@ -100,24 +102,26 @@
 					</div>
 				</div>
 			</div>
-		</div>
-			<div class="underline"></div>
 
-			<h3 id="page_txt">PAGE </h3>
-			<p id="total_page"></p>
-			<table class="table table-bordered" id="page_list">
-				<thead>
-					<tr>
-						<th class="text-center">#</th>
-						<th class="text-center">Social ID</th>
-						<th class="text-center">Name</th>
-						<th class="text-center">Channel</th>
-						<th class="text-center">Status</th>
-					</tr>
-				</thead>
-				<tbody>
-					{{-- get from Ajax --}}
-				</tbody>
-			</table>
+			<div class="col-md-6">
+				<h3 id="page_txt">PAGE </h3>
+				<p id="total_page"></p>
+				<table class="table table-bordered" id="page_list">
+					<thead>
+						<tr>
+							<th class="text-center">#</th>
+							<th class="text-center">Social ID</th>
+							<th class="text-center">Name</th>
+							<th class="text-center">Channel</th>
+							<th class="text-center">Status</th>
+						</tr>
+					</thead>
+					<tbody>
+						{{-- get from Ajax --}}
+					</tbody>
+				</table>
+			</div>
 		</div>
+		
+	</div>
 @stop

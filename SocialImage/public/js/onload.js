@@ -66,9 +66,9 @@ function getImage(dateStart, dateEnd, subject, offset)
 
 					var html = '<div class="col-md-2 col-sm-2 col-xs-2 thumbnail" title="'+moment(post[key].post_created_time).format("HH:mm")+'">' +
 								'<div class="text-center">'+channel+' <span>'+title+'</span></div>'+
-										'<a href="'+post[key].post_link+'" target="_blank">' +
-											'<img src="'+post[key].post_url_image+'">' +
-										 '</a>' +
+											'<a href="'+post[key].post_link+'" target="_blank">' +
+												'<img src="'+post[key].post_url_image+'">' +
+											 '</a>' +
 										 '<span class="">'+
 										 	''+post_created_time+''+
 											 '<a href="'+post[key].post_url_image+'" class="download text-right" target="_blank" download="'+post[key].author_displayname+'.jpeg">' +

@@ -126,7 +126,7 @@ div.nodata > span
 .example
 {
 	color: rgb(195, 195, 195);
-	font-style: italic;
+	font-size: 12px;
 }
 
 .example > span
@@ -161,4 +161,9 @@ td.status-close
 	background-color: rgb(223, 158, 158);
 	color: rgb(211, 0, 0);
 	font-weight: bold;
+}
+
+.grid
+{
+	padding: 0px;
 }

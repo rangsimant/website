@@ -10,7 +10,7 @@
 
 	<link rel="stylesheet" type="text/css" href="{{ asset('bootstrap-3.3.4/css/bootstrap.min.css') }}">
 	<link rel="stylesheet" type="text/css" href="{{ asset('font-awesome-4.3.0/css/font-awesome.min.css') }}">
-	<link rel="stylesheet" type="text/css" href="{{ asset('bootstrap-daterangepicker/daterangepicker-bs3.css') }}" />
+  <link rel="stylesheet" type="text/css" href="{{ asset('bootstrap-daterangepicker/daterangepicker-bs3.css') }}" />
   
 	<link rel="stylesheet" type="text/css" href="{{ asset('css/social-image.css?v=1.0') }}">
 </head>
