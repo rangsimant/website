@@ -72,12 +72,13 @@ function getImage(dateStart, dateEnd, subject, offset)
 										 '<span class="">'+
 										 	''+post_created_time+''+
 											 '<a href="'+post[key].post_url_image+'" class="download text-right" target="_blank" download="'+post[key].author_displayname+'.jpeg">' +
-												 '<i class="fa fa-cloud-download" title="Download"></i>' +
+												 '<i class="fa fa-cloud-download" data-toggle="tooltip" data-placement="top" title="Download"></i>' +
 											 '</a>'+
 										 '</span>'+
 									'</div>';
 					$('div.nodata').hide();
 					$('.content').append(html);
+					$('[data-toggle="tooltip"]').tooltip();
 				})
 			}
 			else if ($('.content > div').length <= 0)

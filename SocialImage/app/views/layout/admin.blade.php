@@ -14,6 +14,7 @@
 
 	<link rel="stylesheet" type="text/css" href="{{ asset('DataTables-1.10.7/media/css/jquery.dataTables.min.css') }}" />
   
+  <link rel="stylesheet" type="text/css" href="{{ asset('css/bootstrap.doc.min.css') }}">
 	<link rel="stylesheet" type="text/css" href="{{ asset('css/social-image.css?v=1.0') }}">
 </head>
 

@@ -11,7 +11,7 @@
 |
 */
 Route::controller('admin','AdminController');
-Route::post('newAccount','AccountController@postNewAccount');
+Route::post('newAccount','AccountController@postNewAccountFacebook');
 
 Route::get('/','HomeController@all');
 Route::get('facebook','HomeController@all');

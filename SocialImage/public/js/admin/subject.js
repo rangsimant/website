@@ -4,6 +4,7 @@ $('#subject').change(function()
 	var tbody = $('#page_list > tbody');
 	var title_page = $('#page_txt');
 	var total_page = $('#total_page');
+	$('input[name="subject"]').val(subject);
 
 	title_page.text("PAGE "+ subject.toUpperCase());
 	tbody.html('');

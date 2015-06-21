@@ -7,7 +7,7 @@
 				<h3>ADD NEW PAGE</h3>
 				<div role="tabpanel">
 
-					<div class="bs-example bs-example-tabs" role="tabpanel" data-example-id="togglable-tabs">
+					<div class="bs-example-tabs" role="tabpanel" data-example-id="togglable-tabs">
 						<!-- Nav tabs -->
 						<ul class="nav nav-tabs" role="tablist">
 							<li role="presentation" class="active">
@@ -39,11 +39,13 @@
 							<p class="example">
 								Example : https://www.facebook.com/<span>118133614869896</span>?fref=ts | <span>ID = "118133614869896"</span>
 							</p>
+							{{ Form::open(array('id' => 'facebook_page', 'url' => 'newAccount', 'autocomplete' => 'off')) }}
+							
 							<div class="">
 								<div class="form-group">
 									<label>SUBJECT :</label>
 									<div class="input-group">
-										<select class="form-control input-md select-subject" id="subject">
+										<select class="form-control input-md select-subject" id="subject" required>
 											<option value="">--Please select subject--</option>
 										 	@foreach($subjects as $subject)
 								          		<option value="{{ $subject->subject_name }}">{{ ucfirst($subject->subject_name) }}</option>
@@ -52,14 +54,26 @@
 									</div>
 								</div>
 							</div>
-							{{ Form::open(array('id' => 'facebook_page', 'url' => 'newAccount', 'autocomplete' => 'off')) }}
+							@if(Session::get('message'))
+								<div class="bs-example-bg-classes">
+									<p class="bg-danger">{{ Session::get('message') }}</p>
+									<button type="button" class="close" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+								</div>
+							@endif
+
+							@if(Session::get('success'))
+								<div class="bs-example-bg-classes">
+									<p class="bg-success">{{ Session::get('success') }}</p>
+								</div>
+							@endif
+							<input type="hidden" id="subject" name="subject" value="">
 							<div class="group">
 								<div class="form-inline">
 									<div class="form-group">
 										<label class="sr-only" for="exampleInputAmount">Amount (in dollars)</label>
 										<div class="input-group">
 											<div class="input-group-addon"><i class="fa fa-facebook"></i></div>
-											<input type="text" class="form-control account" id="account" name="account[]" placeholder="ID or Name">
+											<input type="text" class="form-control account" id="account" name="account[]" placeholder="ID or Name" required>
 										</div>
 									</div>
 
@@ -67,7 +81,7 @@
 										<label class="sr-only" for="datetime">Amount (in dollars)</label>
 										<div class="input-group">
 											<div class="input-group-addon"><i class="fa fa-calendar"></i></div>
-											<input type="text" class="form-control since" id="since" name="since[]" placeholder="YYYY-MM-DD">
+											<input type="text" class="form-control since" id="since" name="since[]" placeholder="YYYY-MM-DD" required>
 										</div>
 									</div>
 								</div>
