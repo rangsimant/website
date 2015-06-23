@@ -63,7 +63,7 @@
 
 							@if(Session::get('success'))
 								<div class="bs-example-bg-classes">
-									<p class="bg-success">{{ Session::get('success') }}</p>
+									<p class="alert alert-success">{{ Session::get('success') }}</p>
 								</div>
 							@endif
 							<input type="hidden" id="subject" name="subject" value="">
