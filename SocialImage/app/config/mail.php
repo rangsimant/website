@@ -54,7 +54,7 @@ return array(
 	|
 	*/
 
-	'from' => array('address' => null, 'name' => null),
+	'from' => array('address' => 'sunnamaja@hotmail.com', 'name' => '1100s0120877'),
 
 	/*
 	|--------------------------------------------------------------------------
