@@ -17,7 +17,7 @@ class AnnotationController extends Controller {
 	{
 		$client_page = ClientPage::getPageFromUserID(Auth::user()->id, $status = 'on');
 		$client_page = $this->processFormatObject($client_page);
-		return view('annotation')->with('pages', $client_page);
+		return view('annotation.index')->with('pages', $client_page);
 	}
 
 	private static function processFormatObject($facebook_page)

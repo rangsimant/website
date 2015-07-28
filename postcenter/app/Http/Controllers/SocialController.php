@@ -31,7 +31,7 @@ class SocialController extends Controller {
 		}
 
 		$getLoginUrl = $this->facebook->getLoginUrl();
-		return view('social.social')
+		return view('social.index')
 						->with('url_facebook_login', $getLoginUrl)
 						->with('status_check_all', $status_check_all)
 						->with('pages', $data);

@@ -43,7 +43,10 @@ $(function()
     	$('tr').click(function()
 		{
 			feedLoading();
+            var page_id = $('input', this).val();
 			$('#page-title').text($('td.mailbox-name', this).text());
+            alert(page_id);
+
 			setTimeout(function()
 			{
 				feedLoaded();
