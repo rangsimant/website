@@ -47,7 +47,7 @@
 		</div>
 	</div>
   <div class="col-lg-8">
-    @include('feed')
+    @include('annotation.feed')
   </div>
 </div>
 
