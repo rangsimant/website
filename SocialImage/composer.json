@@ -6,7 +6,8 @@
 	"require": {
 		"laravel/framework": "4.2.*",
 		"facebook/php-sdk-v4" : "4.0.*",
-		"zizaco/confide": "~4.3@dev"
+		"zizaco/confide": "~4.3@dev",
+		"xethron/migrations-generator": "dev-master"
 	},
 	"autoload": {
 		"classmap": [
