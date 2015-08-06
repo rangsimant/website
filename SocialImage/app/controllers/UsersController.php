@@ -210,7 +210,7 @@ class UsersController extends Controller
 
         $repo = App::make('UserRepository');
         $user = $repo->update($input);
-        
+
         return Redirect::back()->with('user', $user);
     }
 }

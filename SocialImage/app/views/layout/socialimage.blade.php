@@ -69,8 +69,8 @@
         </ul>
         <ul class="nav navbar-nav navbar-right">
            <li class="dropdown">
-            <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">Acer <span class="caret"></span></a>
-            <ul class="dropdown-menu" id="subject" role="menu">
+            <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false" id="subject"> <span class="caret"></span></a>
+            <ul class="dropdown-menu" id="subject-menu" role="menu">
             @foreach($subjects as $subject)
               <li role="presentation"><a role="menuitem" tabindex="-1" href="#">{{ ucfirst($subject->subject_name) }}</a></li>
              @endforeach
@@ -89,7 +89,7 @@
                 @if(Auth::user()->hasRole('admin'))
                   <a role="menuitem" tabindex="-1" href="{{ URL::to('admin') }}">Admin Panel</a>
                 @endif
-                <a role="menuitem" tabindex="-1" href="{{ URL::to('users/logout') }}">Logout</a>
+                <a role="menuitem" tabindex="-1" href="{{ URL::to('users/logout') }}" class="logout">Logout</a>
               </li>
             </ul>
           </li>

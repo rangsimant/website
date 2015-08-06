@@ -27,11 +27,12 @@ $(function()
 	if (sessionStorage.getItem('subject') != null)
 	{
 		var subject = sessionStorage.getItem('subject');
-		$('a.dropdown-toggle').html(subject+" <span class='caret'></span>");
+		$('#subject').html(subject+" <span class='caret'></span>");
 	}
 	else
 	{
-		var subject = $.trim($('a.dropdown-toggle').text());
+		var subject = $.trim($('#subject-menu > li > a:first').text());
+		$('#subject').html(subject+" <span class='caret'></span>");
 		sessionStorage.setItem('subject',subject);
 	}
 

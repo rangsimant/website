@@ -1,10 +1,10 @@
-$('#subject>li>a').click(function()
+$('#subject-menu>li>a').click(function()
 {
 	var subject = $(this).text();
 	ajax_getPost.abort();
 	
 	$('.content').html('');
-	$('a.dropdown-toggle').html(subject+" <span class='caret'></span>");
+	$('#subject').html(subject+" <span class='caret'></span>");
 	
 	sessionStorage.setItem('subject',subject);
 
