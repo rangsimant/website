@@ -88,3 +88,24 @@ Route::filter('csrf', function()
 		throw new Illuminate\Session\TokenMismatchException;
 	}
 });
+
+
+/* 
+|--------------------------------------------------------------------------
+| PERMISSION Manage Page
+|--------------------------------------------------------------------------
+| Can add,delete,edit Page
+
+*/
+
+Route::filter('manage_page', function()
+{
+    if (! Entrust::can('manage_page') ) // Checks the current user
+    {
+        return Redirect::to('/');
+    }
+});
+
+// Only users with roles that have the 'manage_posts' permission will
+// be able to access any admin/post route.
+Route::when('admin/page*', 'manage_page');

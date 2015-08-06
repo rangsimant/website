@@ -22,7 +22,9 @@ class UserRepository
         $user = new User;
 
         $user->email    = array_get($input, 'email');
+        $user->username = array_get($input, 'username');
         $user->password = array_get($input, 'password');
+        $user->confirmed = array_get($input, 'confirmed');
 
         // The password confirmation will be removed from model
         // before saving. This field will be used in Ardent's
@@ -125,5 +127,24 @@ class UserRepository
     public function save(User $instance)
     {
         return $instance->save();
+    }
+
+    public function update($input)
+    {
+        $user = User::find($input['id']);
+
+        $user->email    = array_get($input, 'email');
+        $user->username = array_get($input, 'username');
+        if ($input['password'] != null) 
+        {
+            $user->password = array_get($input, 'password');
+            $user->password_confirmation = array_get($input, 'password_confirmation');
+            $user->confirmed = array_get($input, 'confirmed');
+        }
+
+
+        // Save if valid. Password field will be hashed before save
+        $affected = $user->update();
+        return $user;
     }
 }

@@ -39,7 +39,9 @@
       <div id="navbar" class="navbar-collapse collapse">
         <ul class="nav navbar-nav">
           <li class=""><a href="{{ URL::to('/') }}">Home</a></li>
-          <li class="active"><a href="#">Page</a></li>
+          <li class="{{ (Request::segment(2) == 'client')?'active':'' }}"><a href="{{ URL::to('admin/client') }}">Client Management</a></li>
+          <li class="{{ (Request::segment(2) == 'permission')?'active':'' }}"><a href="{{ URL::to('admin/permission') }}">Permission</a></li>
+          <li class="{{ (Request::segment(2) == 'page')?'active':'' }}"><a href="{{ URL::to('admin/page') }}">Page Management</a></li>
         </ul>
         <ul class="nav navbar-nav navbar-right">
         </ul>

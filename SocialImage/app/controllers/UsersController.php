@@ -44,7 +44,7 @@ class UsersController extends Controller
                 );
             }
 
-            return Redirect::action('UsersController@login')
+            return Redirect::to('admin/client')
                 ->with('notice', Lang::get('confide::confide.alerts.account_created'));
         } else {
             $error = $user->errors()->all(':message');
@@ -195,5 +195,22 @@ class UsersController extends Controller
         Confide::logout();
 
         return Redirect::to('/');
+    }
+
+
+    public function edit($id)
+    {
+        $user = User::find($id);
+        return View::make('admin.client.edit')->with('user', $user);
+    }
+
+    public function update()
+    {
+        $input = Input::all();
+
+        $repo = App::make('UserRepository');
+        $user = $repo->update($input);
+        
+        return Redirect::back()->with('user', $user);
     }
 }

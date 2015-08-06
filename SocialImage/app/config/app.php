@@ -122,6 +122,7 @@ return array(
 		'Illuminate\View\ViewServiceProvider',
 		'Illuminate\Workbench\WorkbenchServiceProvider',
 		'Zizaco\Confide\ServiceProvider',
+		'Zizaco\Entrust\EntrustServiceProvider',
 		'Way\Generators\GeneratorsServiceProvider',
 		'Xethron\MigrationsGenerator\MigrationsGeneratorServiceProvider',
 
@@ -192,6 +193,7 @@ return array(
 		'Validator'       => 'Illuminate\Support\Facades\Validator',
 		'View'            => 'Illuminate\Support\Facades\View',
 		'Confide'   	  => 'Zizaco\Confide\Facade',
+		'Entrust'		  => 'Zizaco\Entrust\EntrustFacade',
 
 	),
 

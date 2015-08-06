@@ -86,6 +86,9 @@
             <a href="#" class="" data-toggle="dropdown" role="button" aria-expanded="false">{{ Auth::user()->username }} <span class="fa fa-cog"></span></a>
             <ul class="dropdown-menu" role="menu">
               <li role="presentation">
+                @if(Auth::user()->hasRole('admin'))
+                  <a role="menuitem" tabindex="-1" href="{{ URL::to('admin') }}">Admin Panel</a>
+                @endif
                 <a role="menuitem" tabindex="-1" href="{{ URL::to('users/logout') }}">Logout</a>
               </li>
             </ul>

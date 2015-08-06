@@ -12,7 +12,13 @@
 */
 Route::group(array('before' => 'auth'), function()
 {
-	Route::controller('admin','AdminController');
+	Route::group(array('before' => 'manage_page'), function()
+	{
+		Route::get('admin/client/create', 'UsersController@create');
+		Route::get('admin/client/{id}/edit', 'UsersController@edit');
+
+		Route::controller('admin','AdminController');
+	});
 	Route::post('newAccount','AccountController@postNewAccountFacebook');
 
 	Route::get('/','HomeController@all');
@@ -25,8 +31,9 @@ Route::group(array('before' => 'auth'), function()
 //
 
 // Confide routes
-Route::get('users/create', 'UsersController@create');
+// Route::get('users/create', 'UsersController@create');
 Route::post('users', 'UsersController@store');
+Route::post('users/update', 'UsersController@update');
 Route::get('users/login', 'UsersController@login');
 Route::post('users/login', 'UsersController@doLogin');
 Route::get('users/confirm/{code}', 'UsersController@confirm');
