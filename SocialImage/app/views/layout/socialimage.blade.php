@@ -12,7 +12,8 @@
 	<link rel="stylesheet" type="text/css" href="{{ asset('font-awesome-4.3.0/css/font-awesome.min.css') }}">
   <link rel="stylesheet" type="text/css" href="{{ asset('bootstrap-daterangepicker/daterangepicker-bs3.css') }}" />
   
-	<link rel="stylesheet" type="text/css" href="{{ asset('css/social-image.css?v=1.0') }}">
+  <link rel="stylesheet" type="text/css" href="{{ asset('css/social-image.css?v=1.0') }}">
+
 </head>
 
 <body cz-shortcut-listen="true">
@@ -69,7 +70,7 @@
         <ul class="nav navbar-nav navbar-right">
            <li class="dropdown">
             <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">Acer <span class="caret"></span></a>
-            <ul class="dropdown-menu" role="menu">
+            <ul class="dropdown-menu" id="subject" role="menu">
             @foreach($subjects as $subject)
               <li role="presentation"><a role="menuitem" tabindex="-1" href="#">{{ ucfirst($subject->subject_name) }}</a></li>
              @endforeach
@@ -77,10 +78,18 @@
           </li>
           <li>
           	<div id="reportrange" class="pull-right daterange">
-		    	<i class="glyphicon glyphicon-calendar fa fa-calendar"></i>
-		    	<span></span> <b class="caret"></b>
-			</div>
-		  </li>
+    		    	<i class="glyphicon glyphicon-calendar fa fa-calendar"></i>
+    		    	<span></span> <b class="caret"></b>
+      			</div>
+    		  </li>
+           <li class="dropdown">
+            <a href="#" class="" data-toggle="dropdown" role="button" aria-expanded="false">{{ Auth::user()->username }} <span class="fa fa-cog"></span></a>
+            <ul class="dropdown-menu" role="menu">
+              <li role="presentation">
+                <a role="menuitem" tabindex="-1" href="{{ URL::to('users/logout') }}">Logout</a>
+              </li>
+            </ul>
+          </li>
         </ul>
       </div><!--/.nav-collapse -->
     </div><!--/.container-fluid -->

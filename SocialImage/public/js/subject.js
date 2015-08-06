@@ -1,4 +1,4 @@
-$('.dropdown-menu>li>a').click(function()
+$('#subject>li>a').click(function()
 {
 	var subject = $(this).text();
 	ajax_getPost.abort();

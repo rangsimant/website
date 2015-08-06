@@ -10,15 +10,18 @@
 | and give it the Closure to execute when that URI is requested.
 |
 */
-Route::controller('admin','AdminController');
-Route::post('newAccount','AccountController@postNewAccountFacebook');
+Route::group(array('before' => 'auth'), function()
+{
+	Route::controller('admin','AdminController');
+	Route::post('newAccount','AccountController@postNewAccountFacebook');
 
-Route::get('/','HomeController@all');
-Route::get('facebook','HomeController@all');
-Route::get('instagram','HomeController@all');
+	Route::get('/','HomeController@all');
+	Route::get('facebook','HomeController@all');
+	Route::get('instagram','HomeController@all');
 
-Route::post('getImage','HomeController@getAll');
-Route::post('getPageList','AccountController@getPageList');
+	Route::post('getImage','HomeController@getAll');
+	Route::post('getPageList','AccountController@getPageList');
+});
 //
 
 // Confide routes

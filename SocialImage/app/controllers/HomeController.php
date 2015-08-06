@@ -5,7 +5,8 @@ class HomeController extends BaseController
 
 	public function all()
 	{
-		$subjects = Subject::all();
+		$subjects = UsersSubject::getSubject();
+
 		return View::make('index')->with('subjects', $subjects);
 	}
 
