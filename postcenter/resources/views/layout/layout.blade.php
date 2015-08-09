@@ -3,6 +3,8 @@
 <html>
   <head>
     <meta charset="UTF-8">
+    <link rel="icon" href="{{ asset('image/POSTcenter.ico') }}" type="image/x-icon"/>
+    <link rel="shortcut icon" href="{{ asset('image/POSTcenter.ico') }}" type="image/x-icon"/>
     <title>POSTcenter | Dashboard</title>
     <meta content='width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no' name='viewport'>
    
@@ -106,7 +108,7 @@
           <ul class="sidebar-menu">
             <li class="header">MAIN NAVIGATION</li>
             <!-- Optionally, you can add icons to the links -->
-            <li><a href="{{ url('annotation') }}"><i class='fa fa-link'></i> <span>Annotation</span></a></li>
+            <li><a href="{{ url('announce') }}"><i class='fa fa-link'></i> <span>Announce</span></a></li>
             <li><a href="{{ url('social') }}"><i class='fa fa-link'></i> <span>Social</span></a></li>
             <li class="treeview">
               <a href="#"><i class='fa fa-link'></i> <span>Multilevel</span> <i class="fa fa-angle-left pull-right"></i></a>

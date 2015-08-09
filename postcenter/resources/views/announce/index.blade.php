@@ -101,7 +101,7 @@
             <!-- START OPENED EMAIL -->
             <div class="email-opened">
               <div class="no-email">
-                <h1>No email has been selected</h1>
+                <h1>No post has been selected</h1>
               </div>
               <div class="email-content-wrapper" style="display:none">
                 <div class="actions-wrapper menuclipper bg-master-lightest">
