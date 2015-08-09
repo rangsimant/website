@@ -34,4 +34,10 @@ class ClientPage extends Model {
 		return $page;
 	}
 
+	public static function removeClientPage($client_id)
+	{
+		$result = self::where('user_id', $client_id)->delete();
+		return $result;
+	}
+
 }

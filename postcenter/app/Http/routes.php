@@ -22,11 +22,12 @@ Route::get('social', 'SocialController@index');
 Route::get('social/facebook', 'SocialController@facebook');
 Route::get('social/pageFacebook', 'SocialController@pageFacebook');
 Route::get('social/facebook/reload', 'SocialController@reloadPageFacebook');
-Route::get('annotation', 'AnnotationController@index');
+Route::get('announce', 'AnnounceController@index');
 Route::get('social/authfacebook', 'SocialController@authFacebook');
 
 
 Route::post('page/status', 'FacebookPageController@changeStatus');
+Route::post('social/remove', 'SocialController@remove');
 
 Route::controllers([
 	'auth' => 'Auth\AuthController',

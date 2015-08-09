@@ -6,6 +6,8 @@ use App\Models\FacebookHelper;
 use App\Models\FacebookPage;
 use App\Models\ClientPage;
 use Auth;
+use Request;
+use Session;
 
 class SocialController extends Controller {
 
@@ -19,7 +21,7 @@ class SocialController extends Controller {
 
 	public function index()
 	{
-		$data = "";
+		$data = null;
 		$status_check_all = "";
 		$user_id = Auth::user()->id;
 		$facebook_page = ClientPage::getPageFromUserID($user_id);
@@ -93,6 +95,24 @@ class SocialController extends Controller {
 		}
 
 		return $status_check_all;
+	}
+
+	public function remove()
+	{
+		$client_id = Auth::id();
+		$channel = Request::get('channel');
+		if ($channel == 'facebook') 
+		{
+			$result = ClientPage::removeClientPage($client_id);
+		}
+		if ($result > 0) 
+		{
+			Session::flash('message.text', 'Remove Facebook Page success.');
+			Session::flash('message.title', 'Delete');
+			Session::flash('message.type', 'danger');
+		}
+		
+		return redirect('social');
 	}
 
 }

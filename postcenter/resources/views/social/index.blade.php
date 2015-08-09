@@ -3,13 +3,30 @@
 @section('content')
 <input type="hidden" value="{{ url('/') }}" id="baseURL">
 <input type="hidden" value="{{ csrf_token() }}" id="csrf">
+
+@if(Session::has('message.text'))
+
+<div class="alert alert-{{ Session::get('message.type') }} alert-dismissable">
+	<button type="button" class="close" data-dismiss="alert" aria-hidden="true">×</button>
+	<h4><i class="icon fa fa-ban"></i>{{ Session::get('message.title') }}</h4>
+	{{ Session::get('message.text') }}
+</div>
+@endif
+
 <div class="box">
 	<div class="box-header with-border">
 		<h3 class="box-title"><i class="fa fa-facebook-official"></i> 
-		facebook
+		Facebook
+		@if(count($pages) > 0)
 			<span class="" data-toggle="tooltip" data-placement="bottom" title="On/Off All page.">
 	        	<input {{ $status_check_all }} name="fb_status_check_all" id="fb_status_check_all" type="checkbox" data-toggle="toggle" data-size="mini" value="">
+	        	<form action="{{ url('social/remove') }}" method="POST" accept-charset="UTF-8" class="form-horizontal">
+					<input type="hidden" value="{{ csrf_token() }}" name="_token">
+	        		<input type="hidden" value="facebook" name="channel">
+		        	<button type="submit" class="btn btn-danger btn-xs" channel="facebook">Remove All</button>
+	        	</form>
 	        </span>
+        @endif
 		</h3>
         </span>
 		<div class="box-tools pull-right">
@@ -54,3 +71,7 @@
 </div>
 
 @endsection
+
+@section('script')
+  <script type="text/javascript" src="{{ asset('js/social.js') }}"></script>
+@endsection()

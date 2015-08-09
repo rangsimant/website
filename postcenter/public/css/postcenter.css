@@ -28,3 +28,7 @@
 {
 	background-color: #FDFDCF !important;
 }
+.email-wrapper .email-opened
+{
+	margin-left: 0px;
+}
