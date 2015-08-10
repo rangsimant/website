@@ -29,7 +29,7 @@ class AccountController extends BaseController
 			{
 				try 
 				{
-					$new_account[$key] = $this->getAccountFromFacebookAPI($val, $key, $config['sub_app_id'], $config['sub_secret'], $config['sub_token'], $input);
+					$new_account[$key] = $this->getAccountFromFacebookAPI($val, $key, $config['sub_app_id'], $config['sub_secret'], $config['sub_token'], $input, $specific_token = 'yes');
 					$msg = 'Add new page success use specific token.';
 				} catch (Exception $e) 
 				{
@@ -42,7 +42,7 @@ class AccountController extends BaseController
 		return Redirect::to('admin/page')->with('success', $msg);
 	}
 
-	public function getAccountFromFacebookAPI($id_page, $idx, $app_id, $app_secret, $access_token, $input)
+	public function getAccountFromFacebookAPI($id_page, $idx, $app_id, $app_secret, $access_token, $input, $specific_token = 'no')
 	{
 		FacebookSession::setDefaultApplication($app_id, $app_secret);
 		$session = new FacebookSession($access_token);
@@ -57,6 +57,7 @@ class AccountController extends BaseController
 		$new_account['account_username'] = $graphObject['name'];
 		$new_account['account_channel'] = 'facebook';
 		$new_account['account_last_datetime'] = date('Y-m-d H:i:s',strtotime($input['since'][$idx]));
+		$new_account['account_specific_token'] = $specific_token;
 
 		return $new_account;
 	}
