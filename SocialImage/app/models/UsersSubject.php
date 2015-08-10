@@ -9,7 +9,7 @@ class UsersSubject extends Eloquent
 	{
 		if (Auth::user()->hasRole('admin')) 
 		{
-			$subject = Subject::all();
+			$subject = Subject::orderBy('subject_name' , 'ASC')->get();
 		}
 		else
 		{
