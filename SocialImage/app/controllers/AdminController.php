@@ -8,7 +8,7 @@ class AdminController extends BaseController {
 	}
 	public function getPage()
 	{
-		$subjects = Subject::all();
+		$subjects = Subject::orderBy('subject_name' , 'ASC')->get();
 		return View::make('admin.index')->with('subjects', $subjects);
 	}
 
