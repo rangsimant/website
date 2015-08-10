@@ -16,6 +16,7 @@ class AccountController extends BaseController
 	{
 		$config = Config::get('facebook_config');
 		$input = Input::all();
+		$msg = '';
 
 		$new_account = array();
 		foreach ($input['account'] as $key => $val) 
@@ -23,12 +24,13 @@ class AccountController extends BaseController
 			try 
 			{
 				$new_account[$key] = $this->getAccountFromFacebookAPI($val, $key, $config['app_id'], $config['app_secret'], $config['app_token'], $input);
+				$msg = 'Add new page success.';
 			} catch (Exception $e) 
 			{
 				try 
 				{
 					$new_account[$key] = $this->getAccountFromFacebookAPI($val, $key, $config['sub_app_id'], $config['sub_secret'], $config['sub_token'], $input);
-
+					$msg = 'Add new page success use specific token.';
 				} catch (Exception $e) 
 				{
 					return Redirect::to('admin/page')->with('message', $e->getMessage());
@@ -37,7 +39,7 @@ class AccountController extends BaseController
 		}
 
 		Account::insert($new_account);
-		return Redirect::to('admin/page')->with('success', 'Add new page success.');
+		return Redirect::to('admin/page')->with('success', $msg);
 	}
 
 	public function getAccountFromFacebookAPI($id_page, $idx, $app_id, $app_secret, $access_token, $input)
