@@ -67,17 +67,17 @@
           <img src="assets/img/logo.png" alt="logo" data-src="assets/img/logo.png" data-src-retina="assets/img/logo_2x.png" width="78" height="22">
           <p class="p-t-35">Sign into your pages account</p>
           @if (count($errors) > 0)
-      <div class="alert alert-danger">
-        <strong>Whoops!</strong> There were some problems with your input.<br><br>
-        <ul>
-          @foreach ($errors->all() as $error)
-            <li>{{ $error }}</li>
-          @endforeach
-        </ul>
-      </div>
-    @endif
+            <div class="alert alert-danger">
+              <strong>Whoops!</strong> There were some problems with your input.<br><br>
+              <ul>
+                @foreach ($errors->all() as $error)
+                  <li>{{ $error }}</li>
+                @endforeach
+              </ul>
+            </div>
+          @endif
           <!-- START Login Form -->
-          <form role="form" method="POST" action="{{ url('/auth/login') }}">
+          <form role="form" method="POST" action="{{ url('/auth/login') }}" id="form-login">
           <input type="hidden" name="_token" value="{{ csrf_token() }}">
             <!-- START Form Control-->
             <div class="form-group form-group-default">
@@ -127,31 +127,6 @@
       <!-- END Login Right Container-->
     </div>
     <!-- END PAGE CONTAINER -->
-    <!-- BEGIN VENDOR JS -->
-    <script src="{{ asset('theme/theme_page/getting_started/html/assets/plugins/pace/pace.min.js') }}" type="text/javascript"></script>
-    <script src="{{ asset('theme/theme_page/getting_started/html/assets/plugins/jquery/jquery-1.11.1.min.js') }}" type="text/javascript"></script>
-    <script src="{{ asset('theme/theme_page/getting_started/html/assets/plugins/modernizr.custom.js') }}" type="text/javascript"></script>
-    <script src="{{ asset('theme/theme_page/getting_started/html/assets/plugins/jquery-ui/jquery-ui.min.js') }}" type="text/javascript"></script>
-    <script src="{{ asset('theme/theme_page/getting_started/html/assets/plugins/boostrapv3/js/bootstrap.min.js') }}" type="text/javascript"></script>
-    <script src="{{ asset('theme/theme_page/getting_started/html/assets/plugins/jquery/jquery-easy.js') }}" type="text/javascript"></script>
-    <script src="{{ asset('theme/theme_page/getting_started/html/assets/plugins/jquery-unveil/jquery.unveil.min.js') }}" type="text/javascript"></script>
-    <script src="{{ asset('theme/theme_page/getting_started/html/assets/plugins/jquery-bez/jquery.bez.min.js') }}"></script>
-    <script src="{{ asset('theme/theme_page/getting_started/html/assets/plugins/jquery-ios-list/jquery.ioslist.min.js') }}" type="text/javascript"></script>
-    <script src="{{ asset('theme/theme_page/getting_started/html/assets/plugins/imagesloaded/imagesloaded.pkgd.min.js') }}"></script>
-    <script src="{{ asset('theme/theme_page/getting_started/html/assets/plugins/jquery-actual/jquery.actual.min.js') }}"></script>
-    <script src="{{ asset('theme/theme_page/getting_started/html/assets/plugins/jquery-scrollbar/jquery.scrollbar.min.js') }}"></script>
-    <!-- END VENDOR JS -->
-    <!-- BEGIN CORE TEMPLATE JS -->
-    <script src="{{ asset('theme/theme_page/getting_started/html/pages/js/pages.js') }}" type="text/javascript"></script>
-    <!-- END CORE TEMPLATE JS -->
-    <!-- BEGIN PAGE LEVEL JS -->
-    <script src="{{ asset('theme/theme_page/getting_started/html/assets/js/scripts.js') }}" type="text/javascript"></script>
-    <!-- END PAGE LEVEL JS -->
-    <script>
-    $(function()
-    {
-      $('#form-login').validate()
-    })
     </script>
   </body>
 </html>

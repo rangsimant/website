@@ -65,13 +65,13 @@
           <div class="email-wrapper">
             <!-- START EMAILS LIST -->
             <div class="email-list b-r b-grey"> <a class="email-refresh" href="#"><i class="fa fa-refresh"></i></a>
-              <div id="emailList" class="list-view"><h2 class="list-view-fake-header">Today April 23</h2>
+              <div id="emailList" class="list-view"><h2 class="list-view-fake-header"><i class="fa fa-facebook-official"></i> Facebook</h2>
                 <!-- START EMAIL LIST SORTED BY DATE -->
                 <!-- END EMAIL LIST SORTED BY DATE -->
               <div class="list-view-wrapper" data-ios="false">
                 <div class="list-view-group-container">
                   <div class="list-view-group-header">
-                    <span>Today April 23</span>
+                    <span><i class="fa fa-facebook-official"></i> Facebook</span>
                   </div>
                     <ul class="no-padding">
                       @foreach($pages as $page)
