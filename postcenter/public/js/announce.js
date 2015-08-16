@@ -48,10 +48,10 @@ $(function()
             $(this).toggleClass('active');
             alert(page_id);
 
-			// setTimeout(function()
-			// {
-			// 	feedLoaded();
-			// },1000)
+			setTimeout(function()
+			{
+				feedLoaded();
+			},1000)
 		})
     }
 
