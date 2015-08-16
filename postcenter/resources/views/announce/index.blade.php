@@ -4,7 +4,6 @@
  | Announcing
 @endsection()
 
-
 @section('content1')
 <div class="row">
   <div class="col-lg-4">
@@ -75,7 +74,7 @@
                   </div>
                     <ul class="no-padding">
                       @foreach($pages as $page)
-                      <li class="item padding-15" data-email-id="1">                                 
+                      <li name="page" class="item padding-15" data-page-id="{{ $page['page_id'] }}">                                 
                         <div class="thumbnail-wrapper d32 circular bordered b-info">                                     
                           <img width="40" height="40" alt="" src="{{ $page['url_image'] }}">
                         </div>

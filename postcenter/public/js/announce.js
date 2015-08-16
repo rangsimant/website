@@ -3,7 +3,7 @@ $(function()
 	
 	selectPage();
 
-	$('input[type="checkbox"]').iCheck({
+	$('input[type="checkbox"]').Check({
 	    checkboxClass: 'icheckbox_flat-blue',
 	    radioClass: 'iradio_square-blue',
 	    increaseArea: '20%' // optional
@@ -40,17 +40,18 @@ $(function()
 
     function selectPage()
     {
-    	$('tr').click(function()
+    	$('li[name="page"]').click(function()
 		{
-			feedLoading();
-            var page_id = $('input', this).val();
-			$('#page-title').text($('td.mailbox-name', this).text());
+			// feedLoading();
+            var page_id = $(this).attr('data-page-id');
+            $('li[name="page"]').removeClass('active');
+            $(this).toggleClass('active');
             alert(page_id);
 
-			setTimeout(function()
-			{
-				feedLoaded();
-			},1000)
+			// setTimeout(function()
+			// {
+			// 	feedLoaded();
+			// },1000)
 		})
     }
 
@@ -63,4 +64,5 @@ $(function()
     {	
     	$('#page-loading').hide();
     }
+    
 })

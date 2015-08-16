@@ -708,5 +708,6 @@
     <!-- BEGIN PAGE LEVEL JS -->
     <script src="{{ asset('theme/theme_page/getting_started/html/assets/js/scripts.js') }}" type="text/javascript"></script>
     <!-- END PAGE LEVEL JS -->
+    @yield('script')
   </body>
 </html>
