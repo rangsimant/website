@@ -59,7 +59,8 @@
 @section('content')
 <div class="page-content-wrapper full-height">
         <!-- START PAGE CONTENT -->
-        <div class="content full-height">
+        <div class="content full-height" ng-controller="PageListCtrl">
+        <input type="hidden" id="baseURL" value="{{ url('/') }}">
           <!-- START EMAIL -->
           <div class="email-wrapper">
             <!-- START EMAILS LIST -->
@@ -73,24 +74,24 @@
                     <span><i class="fa fa-facebook-official"></i> Facebook</span>
                   </div>
                     <ul class="no-padding">
-                      @foreach($pages as $page)
-                      <li name="page" class="item padding-15" data-page-id="{{ $page['page_id'] }}">                                 
+
+                      <li name="page" class="item padding-15" ng-repeat="page in pageList" ng-click="getPostList(page.page_id, $index)" ng-class="{ 'active': $index == selectedIndex }" ng-cloak>                                 
                         <div class="thumbnail-wrapper d32 circular bordered b-info">                                     
-                          <img width="40" height="40" alt="" src="{{ $page['url_image'] }}">
+                          <img width="40" height="40" alt="" src="@{{ page.url_image }}">
                         </div>
                         <div class="checkbox  no-margin p-l-10">
                           <input type="checkbox" value="1" id="emailcheckbox-0-0">
                           <label for="emailcheckbox-0-0"></label>
                         </div>
                         <div class="inline m-l-15">
-                          <p class="recipients no-margin hint-text small">{{ $page['category'] }}</p>
-                          <p class="subject no-margin">{{ $page['name'] }}</p>
-                          <p class="body no-margin">Likes : {{ $page['likes'] }}</p>
+                          <p class="recipients no-margin hint-text small">@{{ page.category }}</p>
+                          <p class="subject no-margin">@{{ page.name }}</p>
+                          <p class="body no-margin">Likes : @{{ page.likes }}</p>
                         </div>
                         <div class="datetime"><span class="badge badge-important">300</span></div>
                         <div class="clearfix"></div>
                       </li>
-                      @endforeach()
+  
                     </ul>
                   </div>
                 </div>

@@ -1,13 +1,7 @@
 $(function()
 {
 	
-	selectPage();
-
-	$('input[type="checkbox"]').Check({
-	    checkboxClass: 'icheckbox_flat-blue',
-	    radioClass: 'iradio_square-blue',
-	    increaseArea: '20%' // optional
-	  });
+	// selectPage();
 
 	$(".checkbox-toggle").click(function () {
       var clicks = $(this).data('clicks');
@@ -42,12 +36,8 @@ $(function()
     {
     	$('li[name="page"]').click(function()
 		{
-			// feedLoading();
-            var page_id = $(this).attr('data-page-id');
             $('li[name="page"]').removeClass('active');
             $(this).toggleClass('active');
-            alert(page_id);
-
 			// setTimeout(function()
 			// {
 			// 	feedLoaded();

@@ -42,7 +42,7 @@
     }
     </script>
   </head>
-  <body class="fixed-header ">
+  <body class="fixed-header" ng-app="postcenter">
     <!-- BEGIN SIDEBAR -->
     <div class="page-sidebar" data-pages="sidebar">
       <div id="appMenu" class="sidebar-overlay-slide from-top">
@@ -708,6 +708,11 @@
     <!-- BEGIN PAGE LEVEL JS -->
     <script src="{{ asset('theme/theme_page/getting_started/html/assets/js/scripts.js') }}" type="text/javascript"></script>
     <!-- END PAGE LEVEL JS -->
+
+    {{-- ANGULAR JS --}}
+    <script src="{{ asset('angular/angular.min.js') }}" type="text/javascript"></script>
+    <script src="{{ asset('angular/controller.js') }}" type="text/javascript"></script>
+
     @yield('script')
   </body>
 </html>

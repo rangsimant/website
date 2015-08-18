@@ -20,6 +20,13 @@ class AnnounceController extends Controller {
 		return view('announce.index')->with('pages', $client_page);
 	}
 
+	public function getPageList()
+	{
+		$client_page = ClientPage::getPageFromUserID(Auth::user()->id, $status = 'on');
+		$client_page = $this->processFormatObject($client_page);
+		echo json_encode($client_page);
+	}
+
 	private static function processFormatObject($facebook_page)
 	{
 		$data = array();

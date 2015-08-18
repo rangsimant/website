@@ -33,3 +33,6 @@ Route::controllers([
 	'auth' => 'Auth\AuthController',
 	'password' => 'Auth\PasswordController',
 ]);
+
+/*FOR ANGULAR JS*/
+Route::get('pagelist', 'AnnounceController@getPageList');
