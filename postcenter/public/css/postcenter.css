@@ -32,3 +32,10 @@
 {
 	margin-left: 0px;
 }
+.card .fa-facebook, .card .fa-instagram, .card .fa-twitter
+{
+	position: absolute;
+    right: 20px;
+    top: 20px;
+    display: block;
+}

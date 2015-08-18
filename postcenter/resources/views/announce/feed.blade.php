@@ -1,72 +1,42 @@
 
-  <div class="box box-default direct-chat direct-chat-primary">
-    <div class="box-header with-border">
-      <h3 class="box-title" id="page-title">Page</h3>
-      <div class="box-tools pull-right">
-        <span data-toggle="tooltip" title="3 New Messages" class="badge bg-light-blue">3</span>
-        <button class="btn btn-box-tool" data-widget="collapse"><i class="fa fa-minus"></i></button>
-        <button class="btn btn-box-tool" data-toggle="tooltip" title="Contacts" data-widget="chat-pane-toggle"><i class="fa fa-comments"></i></button>
-        <button class="btn btn-box-tool" data-widget="remove"><i class="fa fa-times"></i></button>
-      </div>
-    </div><!-- /.box-header -->
-    <div class="box-body">
-      <!-- Conversations are loaded here -->
-      <div class="direct-chat-messages">
-	    <!-- Message. Default to the left -->
-	    <div class="direct-chat-msg">
-	      <div class="direct-chat-info clearfix">
-	        <span class="direct-chat-name pull-left">Alexander Pierce</span>
-	        <span class="direct-chat-timestamp pull-right">23 Jan 2:00 pm</span>
-	      </div><!-- /.direct-chat-info -->
-	      <img class="direct-chat-img" src="../dist/img/user1-128x128.jpg" alt="message user image"><!-- /.direct-chat-img -->
-	      <div class="direct-chat-text">
-	        Is this template really for free? That's unbelievable!
-	      </div><!-- /.direct-chat-text -->
-	    </div><!-- /.direct-chat-msg -->
-
-	    <!-- Message to the right -->
-	    <div class="direct-chat-msg right">
-	      <div class="direct-chat-info clearfix">
-	        <span class="direct-chat-name pull-right">Sarah Bullock</span>
-	        <span class="direct-chat-timestamp pull-left">23 Jan 2:05 pm</span>
-	      </div><!-- /.direct-chat-info -->
-	      <img class="direct-chat-img" src="../dist/img/user3-128x128.jpg" alt="message user image"><!-- /.direct-chat-img -->
-	      <div class="direct-chat-text">
-	        You better believe it!
-	      </div><!-- /.direct-chat-text -->
-	    </div><!-- /.direct-chat-msg -->
-      </div><!--/.direct-chat-messages-->
-
-
-      <!-- Contacts are loaded here -->
-      <div class="direct-chat-contacts">
-        <ul class="contacts-list">
-          <li>
-            <a href="#">
-              <img class="contacts-list-img" src="../dist/img/user1-128x128.jpg">
-              <div class="contacts-list-info">
-                <span class="contacts-list-name">
-                  Count Dracula
-                  <small class="contacts-list-date pull-right">2/28/2015</small>
-                </span>
-                <span class="contacts-list-msg">How have you been? I was...</span>
-              </div><!-- /.contacts-list-info -->
-            </a>
-          </li><!-- End Contact Item -->
-        </ul><!-- /.contatcts-list -->
-      </div><!-- /.direct-chat-pane -->
-    </div><!-- /.box-body -->
-    <div class="overlay" id="page-loading" style="display:none">
-      <i class="fa fa-refresh fa-spin"></i>
-    </div>
-    <div class="box-footer">
-      <form action="#" method="post">
-        <div class="input-group">
-          <input type="text" name="message" placeholder="Type Message ..." class="form-control">
-          <span class="input-group-btn">
-            <button type="button" class="btn btn-primary btn-flat">Send</button>
-          </span>
+<!-- START EMAILS LIST -->
+<div class="email-list b-r b-grey"> <a class="email-refresh" href="#"><i class="fa fa-refresh"></i></a>
+  <div id="emailList" class="list-view"><h2 class="list-view-fake-header"><i class="fa fa-facebook-official"></i> POST</h2>
+    <!-- START EMAIL LIST SORTED BY DATE -->
+    <!-- END EMAIL LIST SORTED BY DATE -->
+  <div class="list-view-wrapper" data-ios="false">
+    <div class="list-view-group-container" style="padding:45px 15px 0 15px">
+              <div class="card share  col1" data-social="item" style="width:100%;" ng-repeat="post in postList">
+                        <div ng-class="{'fa fa-facebook':post.post_channel == 'facebook'}" data-toggle="tooltip" title="Label" data-container="body">
+                        </div>
+                        <div class="card-header clearfix">
+                            <div class="user-pic">
+                                <img alt="Profile Image" width="33" height="33" ui-jq="unveil" data-src-retina="assets/img/profiles/8x.jpg" data-src="assets/img/profiles/8.jpg" src="assets/img/profiles/8.jpg">
+                            </div>
+                            <h5>@{{ post.author_name }}</h5>
+                            <h6>Posted Time
+                                <span class="location semi-bold">@{{ post.posted_time }}</span>
+                            </h6>
+                        </div>
+                        <div class="card-description">
+                            <p>@{{ post.post_body }} </p>
+                            <div class="via">via @{{ post.post_channel }}</div>
+                        </div>
+                        <div class="card-content" ng-if="post.post_image_url">
+                            <img alt="Social post" src="@{{ post.post_image_url }}">
+                        </div>
+                        <div class="card-footer clearfix">
+                            <div class="time">@{{ post.posted_time }}</div>
+                            <ul class="reactions">
+                                <li><a href="">@{{ post.post_comment_count }} <i class="fa fa-comment-o"></i></a>
+                                </li>
+                                <li><a href="">@{{ post.post_likes_count }} <i class="fa fa-like-o"></i></a>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
         </div>
-      </form>
-    </div><!-- /.box-footer-->
-  </div><!--/.direct-chat -->
+    </div>
+  </div>
+  
+  

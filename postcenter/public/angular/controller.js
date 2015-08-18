@@ -9,13 +9,19 @@ postcenter.controller('PageListCtrl', function($scope, $http)
 	    $scope.pageList = response;
 	    console.log($scope.pageList);
 	  }, function(response) {
-	    // called asynchronously if an error occurs
-	    // or server returns response with an error status.
+		  
 	  });
 
 	$scope.selectedIndex = -1;
 	$scope.getPostList = function(page_id, $index)
 	{
 		$scope.selectedIndex = $index;
+		
+		$http.get($scope.baseURL+'/'+page_id+'/getPostlist')
+			.success(function(response) {
+				$scope.postList = response;;
+			}, function(response) {	
+							
+			});
 	}
 })

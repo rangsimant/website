@@ -1,5 +1,7 @@
 <?php namespace App\Http\Controllers;
 
+use App\Models\Post;
+
 session_start();
 
 use Auth;
@@ -25,6 +27,12 @@ class AnnounceController extends Controller {
 		$client_page = ClientPage::getPageFromUserID(Auth::user()->id, $status = 'on');
 		$client_page = $this->processFormatObject($client_page);
 		echo json_encode($client_page);
+	}
+	
+	public function getPostFromPageID($page_id)
+	{
+		$posts = Post::getPostByPageID($page_id);
+		echo json_encode($posts);
 	}
 
 	private static function processFormatObject($facebook_page)

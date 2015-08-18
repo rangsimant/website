@@ -77,16 +77,16 @@
 
                       <li name="page" class="item padding-15" ng-repeat="page in pageList" ng-click="getPostList(page.page_id, $index)" ng-class="{ 'active': $index == selectedIndex }" ng-cloak>                                 
                         <div class="thumbnail-wrapper d32 circular bordered b-info">                                     
-                          <img width="40" height="40" alt="" src="@{{ page.url_image }}">
+                          <img width="40" height="40" alt="" ng-src="@{{ page.url_image }}">
                         </div>
                         <div class="checkbox  no-margin p-l-10">
                           <input type="checkbox" value="1" id="emailcheckbox-0-0">
                           <label for="emailcheckbox-0-0"></label>
                         </div>
                         <div class="inline m-l-15">
-                          <p class="recipients no-margin hint-text small">@{{ page.category }}</p>
-                          <p class="subject no-margin">@{{ page.name }}</p>
-                          <p class="body no-margin">Likes : @{{ page.likes }}</p>
+                          <p class="recipients no-margin hint-text small" ng-cloak>@{{ page.category }}</p>
+                          <p class="subject no-margin" ng-cloak>@{{ page.name }}</p>
+                          <p class="body no-margin" ng-cloak>Likes : @{{ page.likes }}</p>
                         </div>
                         <div class="datetime"><span class="badge badge-important">300</span></div>
                         <div class="clearfix"></div>
@@ -98,6 +98,9 @@
               </div>
             </div>
             <!-- END EMAILS LIST -->
+            @include('announce.feed')
+            </div>
+            
             <!-- START OPENED EMAIL -->
             <div class="email-opened">
               <div class="no-email">
