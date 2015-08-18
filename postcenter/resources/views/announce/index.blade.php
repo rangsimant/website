@@ -185,5 +185,6 @@
 @endsection
 
 @section('script')
+  <script type="text/javascript" src="{{ asset('angular/ng-infinite-scroll.js') }}"></script>
   <script type="text/javascript" src="{{ asset('js/announce.js') }}"></script>
 @endsection

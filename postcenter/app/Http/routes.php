@@ -36,4 +36,4 @@ Route::controllers([
 
 /*FOR ANGULAR JS*/
 Route::get('pagelist', 'AnnounceController@getPageList');
-Route::get('{page_id}/getPostlist', 'AnnounceController@getPostFromPageID');
+Route::get('{page_id}/getPostlist/{page}', 'AnnounceController@getPostFromPageID');

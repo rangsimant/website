@@ -14,7 +14,7 @@ class Post extends Model {
 	{
 		$user_id = Auth::id();
 		$take = 20;
-		$offset = $page*$take;
+		$skip = ($page*$take);
 		$posts = ClientPage::
 						leftJoin('facebook_page', 'facebook_page.facebook_id', '=', 'client_page.facebook_id')
 						->leftJoin('post', 'post.Facebook_id', '=', 'facebook_page.facebook_id')								
@@ -30,7 +30,7 @@ class Post extends Model {
 							'author.author_name',
 							'author.author_channel'
 							)
-							->skip($page)
+							->skip($skip)
 							->take($take)
 							->orderBy('posted_time', 'DESC')
 							->get();

@@ -29,9 +29,9 @@ class AnnounceController extends Controller {
 		echo json_encode($client_page);
 	}
 	
-	public function getPostFromPageID($page_id)
+	public function getPostFromPageID($page_id, $page)
 	{
-		$posts = Post::getPostByPageID($page_id);
+		$posts = Post::getPostByPageID($page_id, $page);
 		echo json_encode($posts);
 	}
 
