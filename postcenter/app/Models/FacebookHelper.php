@@ -89,11 +89,6 @@ class FacebookHelper extends Model {
 					$client_page = ClientPage::where('facebook_id', $facebook_page->facebook_id)->first();
 					$client_page->cp_access_token = $val['access_token'];
 					$client_page->save();
-
-					$user_token = UserToken::firstOrCreate([
-							"user_id" => Auth::id(),
-							"utk_access_token" => $this->session->getToken()
-						]);
 				}
 				else
 				{
