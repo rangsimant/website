@@ -39,3 +39,8 @@
     top: 20px;
     display: block;
 }
+
+.card-footer .reactions > li
+{
+	width: 40% !important;
+}
