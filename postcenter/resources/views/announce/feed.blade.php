@@ -22,9 +22,8 @@
                         <span class="location semi-bold">@{{ post.posted_time }}</span>
                     </h6>
                 </div>
-                <div class="card-description">
+                <div ng-if="post.post_body" class="card-description">
                     <p>@{{ post.post_body }} </p>
-                    <div class="via">via @{{ post.post_channel }}</div>
                 </div>
                 <div class="card-content" ng-if="post.post_image_url">
                     <img alt="Social post" src="@{{ post.post_image_url }}">
@@ -39,7 +38,7 @@
                     </ul>
                 </div>
             </div>
-            <div ng-click="reddit.nextPage()" class="text-center">
+            <div ng-show='!reddit.busy' ng-click="reddit.nextPage()" class="text-center">
                 <button class="btn btn-default btn-sm  btn-rounded m-r-20"><i class="fa fa-chevron-down"></i> Load More</button>
             </div>
             <div ng-show='reddit.busy'>
