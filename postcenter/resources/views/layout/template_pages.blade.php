@@ -25,6 +25,7 @@
     <link href="{{ asset('theme/theme_page/getting_started/html/assets/plugins/jquery-scrollbar/jquery.scrollbar.css') }}" rel="stylesheet" type="text/css" media="screen" />
     <link href="{{ asset('theme/theme_page/getting_started/html/assets/plugins/bootstrap-select2/select2.css') }}" rel="stylesheet" type="text/css" media="screen" />
     <link href="{{ asset('theme/theme_page/getting_started/html/assets/plugins/switchery/css/switchery.min.css') }}" rel="stylesheet" type="text/css" media="screen" />
+    <link href="{{ asset('theme/theme_page/getting_started/html/assets/plugins/bootstrap3-wysihtml5/bootstrap3-wysihtml5.min.css') }}" rel="stylesheet" type="text/css" media="screen" />
     <!-- BEGIN Pages CSS-->
     <link href="{{ asset('theme/theme_page/getting_started/html/pages/css/pages-icons.css') }}" rel="stylesheet" type="text/css">
     <link class="main-stylesheet" href="{{ asset('theme/theme_page/getting_started/html/pages/css/pages.css') }}" rel="stylesheet" type="text/css" />

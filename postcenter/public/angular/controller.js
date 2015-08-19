@@ -20,6 +20,12 @@ postcenter.controller('PageListCtrl', function($scope, $http, Reddit)
     $scope.reddit = new Reddit(page_id);
     $('#postlist').show();    
   }
+  
+  $scope.showThread = function(post_id)
+  {
+    $('#thread').show();
+    alert(post_id);
+  }
 
 })
 

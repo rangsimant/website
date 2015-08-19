@@ -103,73 +103,7 @@
             
             <!-- START OPENED EMAIL -->
             <div class="email-opened">
-              <div class="no-email">
-                <h1>No post has been selected</h1>
-              </div>
-              <div class="email-content-wrapper" style="display:none">
-                <div class="actions-wrapper menuclipper bg-master-lightest">
-                  <ul class="actions menuclipper-menu no-margin p-l-20 ">
-                    <li class="visible-sm-inline-block visible-xs-inline-block">
-                      <a href="#" class="email-list-toggle"><i class="fa fa-angle-left"></i> All Inboxes
-                                </a>
-                    </li>
-                    <li class="no-padding "><a href="#" class="text-info">Reply</a>
-                    </li>
-                    <li class="no-padding "><a href="#">Reply all</a>
-                    </li>
-                    <li class="no-padding "><a href="#">Forward</a>
-                    </li>
-                    <li class="no-padding "><a href="#">Mark as read</a>
-                    </li>
-                    <li class="no-padding "><a href="#" class="text-danger">Delete</a>
-                    </li>
-                  </ul>
-                  <div class="clearfix"></div>
-                </div>
-                <div class="email-content">
-                  <div class="email-content-header">
-                    <div class="thumbnail-wrapper d48 circular bordered">
-                      <img width="40" height="40" alt="" data-src-retina="assets/img/profiles/avatar2x.jpg" data-src="assets/img/profiles/avatar.jpg" src="assets/img/profiles/avatar2x.jpg">
-                    </div>
-                    <div class="sender inline m-l-10">
-                      <p class="name no-margin bold">
-                      </p>
-                      <p class="datetime no-margin"></p>
-                    </div>
-                    <div class="clearfix"></div>
-                    <div class="subject m-t-20 m-b-20 semi-bold">
-                    </div>
-                    <div class="fromto">
-                      <div class="pull-left">
-                        <div class="btn-group dropdown-default">
-                          <a class="btn dropdown-toggle btn-small btn-rounded" data-toggle="dropdown" href="#">
-                                        David Nester
-                                        <span class="caret"></span>
-                                        </a>
-                          <ul class="dropdown-menu" style="width: 129px;">
-                            <li><a href="#">Action</a>
-                            </li>
-                            <li><a href="#">Friend</a>
-                            </li>
-                            <li><a href="#">Report</a>
-                            </li>
-                          </ul>
-                        </div>
-                        <label class="inline">
-                          <span class="muted">&nbsp;&nbsp;to</span>
-                          <span class=" small-text">johnsmith@skyace.com</span>
-                        </label>
-                      </div>
-                    </div>
-                  </div>
-                  <div class="clearfix"></div>
-                  <div class="email-content-body m-t-20">
-                  </div>
-                  <div class="wysiwyg5-wrapper b-a b-grey m-t-30">
-                    <textarea class="email-reply" placeholder="Reply"></textarea>
-                  </div>
-                </div>
-              </div>
+              @include('announce.thread')
             </div>
             <!-- END OPENED EMAIL -->
             <!-- START COMPOSE BUTTON FOR TABS -->
@@ -186,5 +120,6 @@
 
 @section('script')
   <script type="text/javascript" src="{{ asset('angular/ng-infinite-scroll.js') }}"></script>
+  <script type="text/javascript" src="{{ asset('theme/theme_page/getting_started/html/assets/js/timeline.js') }}"></script>
   <script type="text/javascript" src="{{ asset('js/announce.js') }}"></script>
 @endsection

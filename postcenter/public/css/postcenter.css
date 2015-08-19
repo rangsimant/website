@@ -44,3 +44,21 @@
 {
 	width: 40% !important;
 }
+
+.menuclipper{
+	width: 100%;
+}
+.menuclipper .menuclipper-menu{
+	display: table;
+	/* width: 100%; */
+}
+.menuclipper-menu > li{
+	display: table-cell;
+	padding: 0 29px;
+	white-space: nowrap;
+}
+
+.timeline
+{
+	padding: 5em 0 3em 0;
+}

@@ -5,12 +5,12 @@
     <!-- START EMAIL LIST SORTED BY DATE -->
     <!-- END EMAIL LIST SORTED BY DATE -->
   <div class="list-view-wrapper" data-ios="false" style="background-color:#EEF0F0;">
-   <div infinite-scroll='reddit.nextPage()' infinite-scroll-distance='2' infinite-scroll-disabled='riddit.busy'>
+   <div infinite-scroll='reddit.nextPage()' infinite-scroll-distance='2' infinite-scroll-disabled='riddit.busy' infinite-scroll-container='".scroll-element.scroll-y"'>
     <div class="list-view-group-container" style="padding:45px 15px 0 15px;">
         <div class="list-view-group-header">
             <span><i class="fa fa-facebook-official"></i> POST</span>
             </div>
-        <div class="card share  col1" data-social="item" style="width:100%;" ng-repeat="post in reddit.postList">
+        <div class="card share  col1" data-social="item" style="width:100%;" ng-repeat="post in reddit.postList" ng-click="showThread(post.post_social_id)">
                 <div ng-class="{'fa fa-facebook':post.post_channel == 'facebook'}" data-toggle="tooltip" title="Label" data-container="body">
                 </div>
                 <div class="card-header clearfix">
@@ -38,6 +38,9 @@
                         </li>
                     </ul>
                 </div>
+            </div>
+            <div ng-click="reddit.nextPage()" class="text-center">
+                <button class="btn btn-default btn-sm  btn-rounded m-r-20">Load More</button>
             </div>
             <div ng-show='reddit.busy'>
                 <div class="text-center">
