@@ -15,7 +15,7 @@
                 </div>
                 <div class="card-header clearfix">
                     <div class="user-pic">
-                        <img alt="Profile Image" width="33" height="33" ui-jq="unveil" data-src-retina="assets/img/profiles/8x.jpg" data-src="assets/img/profiles/8.jpg" src="assets/img/profiles/8.jpg">
+                        <img alt="Profile Image" width="33" height="33" ui-jq="unveil" data-src-retina="@{{ post.author_image_url }}" data-src="@{{ post.author_image_url }}" src="@{{ post.author_image_url }}">
                     </div>
                     <h5>@{{ post.author_name }}</h5>
                     <h6>Posted Time

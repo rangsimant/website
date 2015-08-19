@@ -28,7 +28,8 @@ class Post extends Model {
 							'post.*',
 							'post.post_created_at as posted_time',
 							'author.author_name',
-							'author.author_channel'
+							'author.author_channel',
+							'author.author_image_url'
 							)
 							->skip($skip)
 							->take($take)
