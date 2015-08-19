@@ -40,7 +40,7 @@
                 </div>
             </div>
             <div ng-click="reddit.nextPage()" class="text-center">
-                <button class="btn btn-default btn-sm  btn-rounded m-r-20">Load More</button>
+                <button class="btn btn-default btn-sm  btn-rounded m-r-20"><i class="fa fa-chevron-down"></i> Load More</button>
             </div>
             <div ng-show='reddit.busy'>
                 <div class="text-center">
