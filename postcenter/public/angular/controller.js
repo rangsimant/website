@@ -3,6 +3,8 @@ var postcenter = angular.module('postcenter', ['infinite-scroll']);
 postcenter.controller('PageListCtrl', function($scope, $http, Reddit)
 {
 	$scope.baseURL = $('#baseURL').val();
+	$scope.postactive = [];
+	$scope.postSelected = -1;
 
 	$http.get($scope.baseURL+'/pagelist')
 	.success(function(response) {
@@ -12,20 +14,25 @@ postcenter.controller('PageListCtrl', function($scope, $http, Reddit)
 	  });
 
 	$scope.selectedIndex = -1;
-	
 	$scope.getPostList = function(page_id, $index)
 	{
 		$('#postlist').hide();
+		$scope.postactive[$scope.postSelected] = '';
 		$scope.selectedIndex = $index;
-    $scope.reddit = new Reddit(page_id);
-    $('#postlist').show();    
-  }
+	    $scope.reddit = new Reddit(page_id);
+	    $('#postlist').show();    
+	}
   
-  $scope.showThread = function(post_id)
-  {
-    $('#thread').show();
-    alert(post_id);
-  }
+	$scope.showThread = function(post_id, key)
+	{
+	    $('#thread').show();
+	    if (key != $scope.postSelected) 
+    	{
+    		 $scope.postactive[$scope.postSelected] = '';
+    		 $scope.postSelected = key;
+    	}
+	    $scope.postactive[$scope.postSelected] = 'post-active';
+	}
 
 })
 

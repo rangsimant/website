@@ -84,9 +84,9 @@
                           <label for="emailcheckbox-0-0"></label>
                         </div>
                         <div class="inline m-l-15">
-                          <p class="recipients no-margin hint-text small" ng-cloak>@{{ page.category }}</p>
-                          <p class="subject no-margin" ng-cloak>@{{ page.name }}</p>
-                          <p class="body no-margin" ng-cloak>Likes : @{{ page.likes }}</p>
+                          <p class="recipients no-margin hint-text small">@{{ page.category }}</p>
+                          <p class="subject no-margin">@{{ page.name }}</p>
+                          <p class="body no-margin">Likes : @{{ page.likes }}</p>
                         </div>
                         <div class="datetime"><span class="badge badge-important">300</span></div>
                         <div class="clearfix"></div>

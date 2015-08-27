@@ -10,7 +10,7 @@
         <div class="list-view-group-header">
             <span><i class="fa fa-facebook-official"></i> POST</span>
             </div>
-        <div class="card share  col1" data-social="item" style="width:100%;" ng-repeat="post in reddit.postList" ng-click="showThread(post.post_social_id)">
+        <div class="card share col1" data-social="item" style="width:100%;" ng-repeat="(key, post) in reddit.postList" ng-click="showThread(post.post_social_id, key)" ng-class="postactive[key]">
                 <div ng-class="{'fa fa-facebook':post.post_channel == 'facebook'}" data-toggle="tooltip" title="Label" data-container="body">
                 </div>
                 <div class="card-header clearfix">

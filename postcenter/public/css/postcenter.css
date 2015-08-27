@@ -62,3 +62,17 @@
 {
 	padding: 5em 0 3em 0;
 }
+.card-content.ng-scope
+{
+	padding: 6px;
+	cursor: pointer;
+}
+
+.post-active
+{
+	background-color: #daeffd;
+}
+
+[ng\:cloak], [ng-cloak], .ng-cloak {
+  display: none !important;
+}
