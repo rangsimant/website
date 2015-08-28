@@ -1,4 +1,4 @@
-var postcenter = angular.module('postcenter', ['infinite-scroll']);
+var postcenter = angular.module('postcenter', ['infinite-scroll', 'angularMoment']);
 
 postcenter.controller('PageListCtrl', function($scope, $http, Reddit)
 {

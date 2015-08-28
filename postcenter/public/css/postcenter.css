@@ -70,7 +70,8 @@
 
 .post-active
 {
-	background-color: #daeffd;
+    background-color: #FEF6DD;
+    border: solid 1px #EFC995;
 }
 
 [ng\:cloak], [ng-cloak], .ng-cloak {

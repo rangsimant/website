@@ -702,6 +702,8 @@
     <script src="{{ asset('theme/theme_page/getting_started/html/assets/plugins/imagesloaded/imagesloaded.pkgd.min.js') }}"></script>
     <script src="{{ asset('theme/theme_page/getting_started/html/assets/plugins/jquery-actual/jquery.actual.min.js') }}"></script>
     <script src="{{ asset('theme/theme_page/getting_started/html/assets/plugins/jquery-scrollbar/jquery.scrollbar.min.js') }}"></script>
+    <script src="{{ asset('theme/theme_page/getting_started/html/assets/plugins/moment/moment.min.js') }}"></script>
+
     <!-- END VENDOR JS -->
     <!-- BEGIN CORE TEMPLATE JS -->
     <script src="{{ asset('theme/theme_page/getting_started/html/pages/js/pages.js') }}" type="text/javascript"></script>
@@ -711,7 +713,9 @@
     <!-- END PAGE LEVEL JS -->
 
     {{-- ANGULAR JS --}}
+
     <script src="{{ asset('angular/angular.min.js') }}" type="text/javascript"></script>
+    <script src="{{ asset('angular/angular-moment.min.js') }}"></script>
     <script src="{{ asset('angular/controller.js') }}" type="text/javascript"></script>
 
     @yield('script')
