@@ -173,4 +173,5 @@ td.status-close
 	background-color: rgb(27, 139, 147);
     border: solid 5px #E8E8E8;
     color: white;
+    margin-top: 5% !important;
 }

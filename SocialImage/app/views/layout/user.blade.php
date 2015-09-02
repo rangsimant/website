@@ -6,7 +6,7 @@
 
 	<title>SOCIAL IMAGE</title>
 	<meta name="Rangimant Hanwongsa" content="Social Image">
-  	<link rel="shortcut icon" type="image/png" href="{{ asset('image/socialimage_logo.ico') }}"/>
+  	<link rel="shortcut icon" type="image/png" href="{{ asset('image/social_image.ico') }}"/>
 
 	<link rel="stylesheet" type="text/css" href="{{ asset('bootstrap-3.3.4/css/bootstrap.min.css') }}">
 	<link rel="stylesheet" type="text/css" href="{{ asset('font-awesome-4.3.0/css/font-awesome.min.css') }}">
