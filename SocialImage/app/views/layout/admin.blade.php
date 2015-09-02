@@ -6,7 +6,7 @@
 
 	<title>SOCIAL IMAGE Administrator</title>
 	<meta name="Rangimant Hanwongsa" content="Social Image">
-  <link rel="shortcut icon" type="image/png" href="{{ asset('image/socialimage_logo.ico') }}"/>
+  <link rel="shortcut icon" type="image/png" href="{{ asset('image/social_image.ico') }}"/>
 
 	<link rel="stylesheet" type="text/css" href="{{ asset('bootstrap-3.3.4/css/bootstrap.min.css') }}">
 	<link rel="stylesheet" type="text/css" href="{{ asset('font-awesome-4.3.0/css/font-awesome.min.css') }}">
@@ -15,7 +15,7 @@
 	<link rel="stylesheet" type="text/css" href="{{ asset('DataTables-1.10.7/media/css/jquery.dataTables.min.css') }}" />
   
   <link rel="stylesheet" type="text/css" href="{{ asset('css/bootstrap.doc.min.css') }}">
-	<link rel="stylesheet" type="text/css" href="{{ asset('css/social-image.css?v=1.0') }}">
+	<link rel="stylesheet" type="text/css" href="{{ asset('css/social-image.css?v=1.2') }}">
 </head>
 
 <body cz-shortcut-listen="true">

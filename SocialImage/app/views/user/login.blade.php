@@ -1,7 +1,10 @@
 @extends('layout.user')
 
 @section('content')
-      <form class="form-signin"  role="form" method="POST" action="{{{ URL::to('/users/login') }}}" accept-charset="UTF-8">
+  <div class="text-center">
+    <img src="{{ URL::to('/image/original/social_image.png') }}" width="300">
+  </div>
+      <form class="form-signin bg-login"  role="form" method="POST" action="{{{ URL::to('/users/login') }}}" accept-charset="UTF-8">
       	@if (Session::get('error'))
             <div class="alert alert-error alert-danger">{{{ Session::get('error') }}}</div>
         @endif
@@ -19,6 +22,6 @@
             <input tabindex="4" type="checkbox" name="remember" id="remember" value="1"> {{{ Lang::get('confide::confide.login.remember') }}}
           </label>
         </div>
-        <button class="btn btn-lg btn-primary btn-block" type="submit">Sign in</button>
+        <button class="btn btn-lg btn-default btn-block" type="submit">Sign in</button>
       </form>
 @endsection()
