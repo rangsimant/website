@@ -60,10 +60,17 @@ function getImage(dateStart, dateEnd, subject, offset)
 					if (title.length > 20) 
 						title = jQuery.trim(title).substring(0, 20).split(" ").slice(0, 20).join(" ") + "...";
 
-					if (post[key].post_channel == 'facebook')
-						var channel = '<img src="'+baseURL+'/image/facebook.png" class="channel">';
-					else if(post[key].post_channel == 'instagram')
-						var channel = '<img src="'+baseURL+'/image/instagram.png" class="channel">';
+					if (post[key].author_picture != null) 
+					{
+						var channel = '<img src="http://'+post[key].author_picture+'" class="channel">';
+					}
+					else
+					{
+						if (post[key].post_channel == 'facebook')
+							var channel = '<img src="'+baseURL+'/image/facebook.png" class="channel">';
+						else if(post[key].post_channel == 'instagram')
+							var channel = '<img src="'+baseURL+'/image/instagram.png" class="channel">';
+					}
 
 					var html = '<div class="col-md-2 col-sm-2 col-xs-2 thumbnail" title="'+moment(post[key].post_created_time).format("HH:mm")+'">' +
 								'<div class="text-center">'+channel+' <span>'+title+'</span></div>'+
