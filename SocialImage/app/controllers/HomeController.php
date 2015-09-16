@@ -7,7 +7,7 @@ class HomeController extends BaseController
 	{
 		$subjects = UsersSubject::getSubject();
 
-		return View::make('index')->with('subjects', $subjects);
+		return View::make('content')->with('subjects', $subjects);
 	}
 
 	public function getAll()
