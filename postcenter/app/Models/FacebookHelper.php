@@ -27,7 +27,8 @@ class FacebookHelper extends Model {
 
 	public function getLoginUrl()
 	{
-		return $this->helper->getLoginUrl();
+		$scope = ['manage_pages'];
+		return $this->helper->getLoginUrl($scope);
 	}
 
 	public function getAccessTokenPageFromUser()

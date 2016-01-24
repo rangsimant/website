@@ -38,7 +38,7 @@
 		@if(isset($pages) && $pages)
 		<div class="row">	
 			@foreach($pages as $page)
-			<div class="col-md-3 col-sm-6 col-xs-12">
+			<div class="col-md-4 col-sm-6 col-xs-12">
 			  <div class="info-box bg-facebook">
 			    <span class="info-box-icon"><img src="{{ $page['url_image'] }}" width="90" height="90"></span>
 			    <div class="info-box-content">
